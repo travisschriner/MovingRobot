@@ -12,5 +12,45 @@
 int main(void) {
     WDTCTL = WDTPW | WDTHOLD;	// Stop watchdog timer
 	
+
+    initializePins();
+
+       while (1) {
+    	  moveForward();
+    	  __delay_cycles(1000000);
+    	  stop();
+    	  __delay_cycles(10000);
+          moveBack();
+          __delay_cycles(1000000);
+          stop();
+          __delay_cycles(10000);
+
+          moveForward();
+          __delay_cycles(1000000);
+
+          stop();
+          __delay_cycles(10000);
+
+           turnRight90();
+           __delay_cycles(500000);
+           stop();
+           __delay_cycles(10000);
+
+           turnLeft90();
+           __delay_cycles(500000);
+           stop();
+           __delay_cycles(10000);
+
+           turnRight45();
+           __delay_cycles(500000);
+           stop();
+           __delay_cycles(10000);
+
+           turnLeft45();
+           __delay_cycles(500000);
+           stop();
+           __delay_cycles(10000);
+
+       }
 	return 0;
 }
